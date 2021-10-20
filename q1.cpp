@@ -21,53 +21,21 @@ private:
 int main()
 {
     char stillPumping = 'Y';
-    int menu = 0;
     GasPump customer;
     do
     {
-        cout << "What do you want to do?" << endl;
-        cout << "[1] Display gas dispensed and cost" << endl;
-        cout << "[2] Change price per gallon" << endl;
-        cout << "[3] Display cost of gas" << endl;
-        cout << "[4] Reset gas pumped" << endl;
-        cout << "[5] Display total gas dispensed and cost" << endl;
-        cout << "[6] Pump gas" << endl;
-        // Get menu selection
-        cin >> menu;
-        // cout << menu << endl;
-        while (menu < 1 || menu > 6)
-        {
-            cout << "Please make a valid selection: " << endl;
-            cin >> menu;
-        };
-
-        switch (menu)
-        {
-        case 1:
-            customer.displayPumped();
-            break;
-        case 2:
-            customer.setGasPrice();
-            break;
-        case 3:
-            customer.displayPrice();
-            break;
-        case 4:
-            customer.reset();
-            break;
-        case 5:
-            customer.displayTotalGasPumped();
-            break;
-        case 6:
-            customer.pumpGas();
-            break;
-        default:
-            exit(1);
-        }
-        cout << "Enter Y to keep pumping gas: ";
+        cout << "Please enter the price of gas per gallon: ";
+        customer.setGasPrice();
+        customer.pumpGas();
+        cout << "Summary of transaction:" << endl;
+        customer.displayPumped();
+        customer.displayPrice();
+        cout << "Would you like to continue pumping?";
         cin >> stillPumping;
-
+        customer.reset();
     } while (stillPumping == 'y' || stillPumping == 'Y');
+    cout << "The total amount pumped and the price is:" << endl;
+    customer.displayTotalGasPumped();
 }
 
 void GasPump::setGasPrice()
