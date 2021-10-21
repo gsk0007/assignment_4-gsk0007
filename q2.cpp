@@ -6,15 +6,25 @@ class Temperature{
         double getCelsius();
         double getKelvin();
         double getFahrenheit();
-        void setCelsius(double celsius);
+        void setCelsius();
         void setKelvin(double kelvin);
-        void setFahrenheit(double fahrenheit);
+        void setFahrenheit();
     private:
         double kelvin, celsius, fahrenheit;
 };
 
 int main(){
+    double kelvin;
+    Temperature Tconverter;
+    cout << "Please enter a temperature in Kelvin: ";
+    cin >> kelvin;
+    Tconverter.setKelvin(kelvin);
+    Tconverter.setCelsius();
+    Tconverter.setFahrenheit();
 
+    // Display temp in other units
+    cout << "The temperature in celsius is: " << Tconverter.getCelsius() << endl;
+    cout << "The temperature in fahrenheit is: " << Tconverter.getFahrenheit() << endl;
 };
 
 double Temperature::getCelsius(){
@@ -30,13 +40,13 @@ double Temperature::getFahrenheit(){
 };
 
 void Temperature::setCelsius(){
-    celsius = kelvin + 273.15;
+    celsius = kelvin - 273.15;
 };
 
-void Temperature::setKelvin(double kelvin){
-    kelvin = kelvin;
+void Temperature::setKelvin(double in){
+    kelvin = in;
 };
 
 void Temperature::setFahrenheit(){
-    fahrenheit = (9.0/5)*celsius + 32;
+    fahrenheit = ((9.0/5.0)*celsius) + 32.0;
 };
