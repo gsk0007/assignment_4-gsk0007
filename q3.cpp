@@ -23,7 +23,7 @@ int main(){
   const int MAX_PLAYERS = 10;
   vector<Player> Players;
 
-  while(menu!=10){
+  while(menu!=5){
     // Menu for choosing action
     cout << "[1] Add a new player" << endl
         << "[2] Print all" << endl
@@ -134,3 +134,4 @@ string Player::getName(){
 int Player::getScore(){
   return score;
 };
+
