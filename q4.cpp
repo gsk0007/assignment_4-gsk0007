@@ -24,6 +24,7 @@ private:
 
 int main(){
   // Testing constuctor from chars
+  cout << "Should output information for January:" << endl;
   Month m('j','a','n');
   m.outputMonthName(cout);
   cout << " ";
@@ -31,13 +32,15 @@ int main(){
   cout << endl;
 
   // Testing constuctor from int
-  Month m(2);
-  m.outputMonthName(cout);
+  cout << "Should output information for February:" << endl;
+  Month n(2);
+  n.outputMonthName(cout);
   cout << " ";
-  m.outputMonthNumber(cout);
+  n.outputMonthNumber(cout);
   cout << endl;
 
   // Testing next month
+  cout << "Should output information for February:" << endl;
   m = m.nextMonth();
   m.outputMonthName(cout);
   cout << " ";
@@ -45,12 +48,20 @@ int main(){
   cout << endl;
 
   // Testing Input
-  m.getMonthByName('a','p','r')
+  cout << "Input first three letters of a month:" << endl;
+  m.getMonthByName(cin);
   m.outputMonthName(cout);
   cout << " ";
   m.outputMonthNumber(cout);
   cout << endl;
 
+  // Testing Input
+  cout << "Input the number of a month:" << endl;
+  m.getMonthByNumber(cin);
+  m.outputMonthName(cout);
+  cout << " ";
+  m.outputMonthNumber(cout);
+  cout << endl;
 }
 
 Month::Month(char c1, char c2, char c3){
