@@ -3,23 +3,30 @@
 #include<vector>
 #include<iomanip>
 using namespace std;
+// Player class for storing a player's name and score
 class Player{
   public:
+    // Overloaded constructors 
     Player();
     Player(int newScore, string newname);
+    // Setters
     void setName(string newName);
     void setScore(int newScore);
+    // Getters
     string getName();
     int getScore();
   private:
+    // Private variables of name and score
     string name;
     int score;
 };
 
 int main(){
+  // Declare variables for menu selection and temporary variables for initializing a player object
   int menu;
   int tempScore;
   string tempName;
+  // Declare a vector of player objects and its max size
   const int MAX_PLAYERS = 10;
   vector<Player> Players;
 
@@ -110,27 +117,28 @@ int main(){
 }
 
 // Functions
+// Constructor for player class with default values
 Player::Player(){
   name = "";
   score = 0;
 };
+// Constructor for player class with parameters
 Player::Player(int newScore, string newName){
   name = newName;
   score = newScore;
 };
-
+// Setters
 void Player::setName(string newName){
   name = newName;
 };
-
 void Player::setScore(int newScore){
   score = newScore;
 };
 
+// Getters
 string Player::getName(){
   return name;
 };
-
 int Player::getScore(){
   return score;
 };

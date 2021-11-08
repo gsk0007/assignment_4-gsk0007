@@ -63,7 +63,7 @@ int main(){
   m.outputMonthNumber(cout);
   cout << endl;
 }
-
+// Constructor from chars
 Month::Month(char c1, char c2, char c3){
   c1 = tolower(c1);
   c2 = tolower(c2);
@@ -98,19 +98,19 @@ Month::Month(char c1, char c2, char c3){
     exit(1);
   }
 };
-
+// Constructor from int
 Month::Month( int monthNumber){
   monthNum = monthNumber;
 };        
-
+// Default constructor
 Month::Month(){
 
 };
-
+// Input function to set the month based on the month number
 void Month::getMonthByNumber(istream& in){
   in >> monthNum;
 };
-
+// Input function to set the month based on a three character input
 void Month::getMonthByName(istream& in){
   char c1, c2, c3;
   in >> c1 >> c2 >> c3;
@@ -148,11 +148,11 @@ void Month::getMonthByName(istream& in){
   }
   
 };
-
+// Output function to output the month as a number
 void Month::outputMonthNumber(ostream& out){
   out << monthNum;
 };
-
+// Output function to output the month as a name
 void Month::outputMonthName(ostream& out){
   switch (monthNum)
   {
@@ -196,7 +196,7 @@ void Month::outputMonthName(ostream& out){
     exit(1);
   }
 };
-
+// Output function to output the next month as a month object
 Month Month::nextMonth(){
   int nextMonth = monthNum +1;
   if(nextMonth == 13){
@@ -204,7 +204,7 @@ Month Month::nextMonth(){
   }
   return Month(nextMonth);
 };
-
+// Output function to return month number
 int Month::monthNumber(){
  return monthNum;
 };
